@@ -7,8 +7,7 @@ app.BookView = Backbone.View.extend({
 	template: _.template($('#bookTemplate').html()),
 
 	render: function(){
-		this.$el.html(this.template.(this.model.attributes));
+		this.$el.html(this.template(this.model.attributes));
 	return this;
 	}
-
 });

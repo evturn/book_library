@@ -9,5 +9,5 @@ $(function(){
         { title: 'American Psycho', author: 'Bret Easton Ellis', releaseDate: '1991', keywords: 'Novel Splatter' }
     ];
 
-    new.app.LibraryView(books);
+    new app.LibraryView(books);
 });
