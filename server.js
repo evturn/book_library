@@ -6,19 +6,20 @@ var application_root = __dirname,
 
 var app = express();
 
-app.use(express.static(path.join(application_root, 'site')));
+app.use( express.static( path.join( application_root, 'site') ) );
+app.use(bodyParser());
 
 var port = 4711;
 
-app.listen(port, function(){
-	console.log('Express server listening on port %d in %s mode', port, app.settings.env);
+app.listen( port, function() {
+    console.log( 'Express server listening on port %d in %s mode', port, app.settings.env );
 });
 
-app.get('/api', function(request, response){
-	response.send('Library API is running');
+app.get( '/api', function( request, response ) {
+    response.send( 'Library API is running' );
 });
 
-mongoose.connect('mongodb://localhost/library_database');
+mongoose.connect('mongodb://localhost/book_library');
 
 var Book = new mongoose.Schema({
     title: String,
@@ -26,7 +27,7 @@ var Book = new mongoose.Schema({
     releaseDate: Date
 });
 
-var BookModel = mongoose.model('Book', Book);
+var BookModel = mongoose.model( 'Book', Book );
 
 app.get( '/api/books', function( request, response ) {
     return BookModel.find( function( err, books ) {
