@@ -38,4 +38,12 @@ app.get( '/api/books', function( request, response ) {
     });
 });
 
+app.post('api/books', function(request, response){
+	var book = new BookModel({
+		title: request.body.title,
+		author: request.body.author,
+		releaseDate: request.body.releaseData
+	});
+});
+
 
