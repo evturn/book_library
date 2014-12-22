@@ -3,3 +3,5 @@ var application_root = __dirname,
 	bodyParser = require('body-parser'),
 	path = require('path'),
 	mongoose = require('mongoose');
+
+var app = express();
