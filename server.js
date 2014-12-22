@@ -5,3 +5,5 @@ var application_root = __dirname,
 	mongoose = require('mongoose');
 
 var app = express();
+
+app.use(express,static(path.join(application_root, 'site'))):
