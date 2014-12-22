@@ -17,3 +17,5 @@ app.listen(port, function(){
 app.get('/api', function(request, response){
 	response.send('Library API is running');
 });
+
+mongoose.connect('mongodb://localhost/library_database');
