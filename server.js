@@ -25,3 +25,15 @@ var Book = new mongoose.Schema({
 	author: String,
 	releaseDate: Date
 });
+
+var BookModel = mongoose.model('Book', Book);
+
+app.get('api/books', function(request, response){
+	return BookModel.find(function(err, books){
+		if(!err) {
+			return response.send(books);
+		} else {
+			return console.log(err);
+		}
+	});
+});
