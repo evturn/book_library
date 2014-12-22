@@ -44,6 +44,14 @@ app.post('api/books', function(request, response){
 		author: request.body.author,
 		releaseDate: request.body.releaseData
 	});
+	return book.save(function(err){
+		if(!err){
+			console.log('created');
+			return response.send(book);
+		} else {
+			console.log(err);
+		}
+	});
 });
 
 
