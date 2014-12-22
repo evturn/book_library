@@ -6,7 +6,7 @@ var application_root = __dirname,
 
 var app = express();
 
-app.use(express,static(path.join(application_root, 'site'))):
+app.use(express.static(path.join(application_root, 'site')));
 
 var port = 4711;
 
