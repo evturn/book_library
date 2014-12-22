@@ -13,3 +13,7 @@ var port = 4711;
 app.listen(port, function(){
 	console.log('Express server listening on port %d in %s mode', port, app.settings.env);
 });
+
+app.get('/api'. function(request, response){
+	response.send('Library API is running');
+});
