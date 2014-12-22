@@ -19,3 +19,9 @@ app.get('/api', function(request, response){
 });
 
 mongoose.connect('mongodb://localhost/library_database');
+
+var Book = new mongoose.Schema({
+	title: String,
+	author: String,
+	releaseDate: Date
+});
