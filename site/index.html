@@ -12,7 +12,7 @@
     <ul>
       <li><%= title %></li>
       <li><%= author %></li>
-      <li><%= releaseDate %></li>
+      <li><%= $.format.date(new Date(releaseDate), 'MMMm yyyy') %></li>
       <li><%= keywords %></li>
     </ul>
 
