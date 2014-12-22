@@ -38,6 +38,13 @@ app.get('api/books', function(request, response){
 	});
 });
 
+jQuery.get( '/api/books/', function( data, textStatus, jqXHR ) {
+    console.log( 'Get response:' );
+    console.dir( data );
+    console.log( textStatus );
+    console.dir( jqXHR );
+});
+
 app.post( '/api/books', function( request, response ) {
     var book = new BookModel({
         title: request.body.title,
