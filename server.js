@@ -28,36 +28,14 @@ var Book = new mongoose.Schema({
 
 var BookModel = mongoose.model('Book', Book);
 
-app.get('api/books', function(request, response){
-	return BookModel.find(function(err, books){
-		if(!err) {
-			return response.send(books);
-		} else {
-			return console.log(err);
-		}
-	});
-});
-
-jQuery.get( '/api/books/', function( data, textStatus, jqXHR ) {
-    console.log( 'Get response:' );
-    console.dir( data );
-    console.log( textStatus );
-    console.dir( jqXHR );
-});
-
-app.post( '/api/books', function( request, response ) {
-    var book = new BookModel({
-        title: request.body.title,
-        author: request.body.author,
-        releaseDate: request.body.releaseDate
-    });
-    
-    return book.save( function( err ) {
+app.get( '/api/books', function( request, response ) {
+    return BookModel.find( function( err, books ) {
         if( !err ) {
-            console.log( 'created' );
-            return response.send( book );
-            } else {
-                console.log( err );
-            }
+            return response.send( books );
+        } else {
+            return console.log( err );
+        }
     });
 });
+
+
